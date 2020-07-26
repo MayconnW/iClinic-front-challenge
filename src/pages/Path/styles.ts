@@ -81,13 +81,19 @@ export const Content = styled.div`
 export const Header = styled.div`
   display: flex;
   align-items: center;
-  padding: 35px 50px;
+  margin: 35px 50px;
   font-size: 18px;
   line-height: 22px;
   color: ${({ theme }) => theme.color.secondary};
-  > div {
-    cursor: pointer;
+  width: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    svg {
+      animation: pulse 150ms ease infinite alternate;
+    }
   }
+
   svg {
     margin-right: 24px;
     path {
@@ -97,10 +103,18 @@ export const Header = styled.div`
 
   > span {
     transform: translateY(-2px);
-    cursor: pointer;
   }
 
   @media screen and (max-width: 720px) {
-    padding: 20px;
+    margin: 20px;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-4px);
+    }
   }
 `;

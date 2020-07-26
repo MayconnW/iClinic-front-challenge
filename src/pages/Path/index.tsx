@@ -4,6 +4,7 @@ import history from 'services/history';
 import { useLocation } from 'react-router-dom';
 import { DARK_SIDE, Side } from 'config/constants';
 import { darkTheme, lightTheme } from 'styles/themes';
+import { motion } from 'framer-motion';
 
 import { ReactSVG } from 'react-svg';
 import darthVader from 'assets/images/darth-vader.png';
@@ -45,16 +46,28 @@ const Path: React.FC = () => {
             <button type="button" onClick={() => history.push('/')}>
               choose your path again, Padawan
             </button>
-            <img
+            <motion.img
               src={side === DARK_SIDE ? darthVader : luke}
-              alt="Darth Vader"
+              animate={{
+                scale: [1, 1.3, 1.5, 1, 1],
+                rotate: [0, 0, 270, 270, 0],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%', '50%'],
+              }}
             />
-            <h5>
+            <motion.h5
+              animate={{
+                transition: {
+                  delay: 0.5,
+                },
+                scale: [1, 1, 1.1, 1],
+                opacity: [0, 0.2, 0.5, 0.7, 0.9, 1],
+              }}
+            >
               Your master is
               <strong>
                 {side === DARK_SIDE ? 'Darth Vader' : 'Luke Skywalker'}
               </strong>
-            </h5>
+            </motion.h5>
           </Content>
         </Container>
       </ThemeContext.Provider>

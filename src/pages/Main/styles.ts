@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: #fff;
-  height: 50vh;
+  height: calc(50vh + 28px);
 
   > div {
     display: flex;
@@ -19,6 +19,7 @@ export const Container = styled.div`
       font-weight: normal;
       font-size: 72px;
       line-height: 88px;
+      text-align: center;
 
       strong {
         font-weight: bold;
@@ -43,7 +44,7 @@ export const Container = styled.div`
     background: #2c97d1;
     color: #fff;
     border-radius: 10px;
-    transform: translateY(28px);
+    /*transform: translateY(28px);*/
     border: none;
     font-weight: bold;
     font-size: 18px;
