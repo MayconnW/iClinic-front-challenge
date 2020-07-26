@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 import { DARK_SIDE, Side } from 'config/constants';
 import { darkTheme, lightTheme } from 'styles/themes';
 import { motion } from 'framer-motion';
-import { SyncLoader } from 'react-spinners';
 import getPathSide from 'services/getPathSide';
 
 import { ReactSVG } from 'react-svg';
@@ -13,6 +12,7 @@ import darthVader from 'assets/images/darth-vader.png';
 import luke from 'assets/images/luke.png';
 import leftArrow from 'assets/images/left-arrow.svg';
 
+import Button from 'components/Button';
 import { Container, Header, Content } from './styles';
 
 interface HistoryProps {
@@ -57,17 +57,9 @@ const Path: React.FC = () => {
               <span>back</span>
             </Header>
             <Content>
-              <button type="button" onClick={handlePlayAgain}>
-                {!loading ? (
-                  'choose your path again, Padawan'
-                ) : (
-                  <SyncLoader
-                    size={15}
-                    color={theme.color.primary}
-                    loading={loading}
-                  />
-                )}
-              </button>
+              <Button type="button" onClick={handlePlayAgain} loading={loading}>
+                choose your path again, Padawan
+              </Button>
               <motion.img
                 key={`side-${changedTimes}`}
                 src={side === DARK_SIDE ? darthVader : luke}

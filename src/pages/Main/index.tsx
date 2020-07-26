@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import history from 'services/history';
 import { motion, Variants } from 'framer-motion';
-import { SyncLoader } from 'react-spinners';
 
 import getPathSide from 'services/getPathSide';
+import Button from 'components/Button';
 import { Container } from './styles';
 
 const Main: React.FC = () => {
@@ -35,6 +35,7 @@ const Main: React.FC = () => {
           <span>Welcome to </span>
           {iClinic.map((item, i) => (
             <motion.strong
+              key={`strong-${item}${i}`}
               custom={i}
               initial="hidden"
               animate="visible"
@@ -46,18 +47,9 @@ const Main: React.FC = () => {
         </h1>
         <h5>Frontend challenge</h5>
       </div>
-      <motion.button
-        type="button"
-        onClick={handleStartClick}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        {!loading ? (
-          'Start'
-        ) : (
-          <SyncLoader size={15} color="#fff" loading={loading} />
-        )}
-      </motion.button>
+      <Button onClick={handleStartClick} loading={loading}>
+        Start
+      </Button>
     </Container>
   );
 };
