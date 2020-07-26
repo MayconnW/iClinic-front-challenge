@@ -82,11 +82,11 @@ export const Content = styled.div`
 export const Header = styled.div`
   display: flex;
   align-items: center;
+  width: fit-content;
   margin: 35px 50px;
   font-size: 18px;
   line-height: 22px;
   color: ${({ theme }) => theme.color.secondary};
-  width: fit-content;
   cursor: pointer;
 
   &:hover {
