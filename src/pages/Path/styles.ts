@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #2b2b2b;
+  background: ${({ theme }) => theme.color.primary};
 `;
 
 export const Content = styled.div`
@@ -20,7 +20,8 @@ export const Content = styled.div`
     align-items: center;
     width: 347px;
     height: 56px;
-    background: #fff;
+    background: ${({ theme }) => theme.color.secondary};
+    color: ${({ theme }) => theme.color.primary};
     border-radius: 10px;
     font-weight: bold;
     font-size: 16px;
@@ -40,7 +41,7 @@ export const Content = styled.div`
     font-size: 36px;
     line-height: 44px;
     display: flex;
-    color: #fff;
+    color: ${({ theme }) => theme.color.secondary};
     margin-top: 45px;
 
     strong {
@@ -83,12 +84,15 @@ export const Header = styled.div`
   padding: 35px 50px;
   font-size: 18px;
   line-height: 22px;
-  color: #fff;
+  color: ${({ theme }) => theme.color.secondary};
   > div {
     cursor: pointer;
   }
   svg {
     margin-right: 24px;
+    path {
+      fill: ${({ theme }) => theme.color.secondary};
+    }
   }
 
   > span {
