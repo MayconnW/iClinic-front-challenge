@@ -1,8 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { DARK_SIDE, LIGHT_SIDE } from 'config/constants';
 import history from 'services/history';
 import { motion, Variants } from 'framer-motion';
-import { css } from '@emotion/core';
 import { SyncLoader } from 'react-spinners';
 
 import getPathSide from 'services/getPathSide';

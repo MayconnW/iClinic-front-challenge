@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-y: hidden;
   background: ${({ theme }) => theme.color.primary};
 `;
 
@@ -50,7 +51,7 @@ export const Content = styled.div`
     }
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 800px) {
     justify-content: space-around;
 
     > img {
@@ -105,7 +106,7 @@ export const Header = styled.div`
     transform: translateY(-2px);
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 800px) {
     margin: 20px;
   }
 
