@@ -53,11 +53,20 @@ const Path: React.FC = () => {
         <ThemeContext.Provider value={theme}>
           <Container>
             <Header>
-              <ReactSVG src={leftArrow} onClick={() => history.push('/')} />
+              <ReactSVG
+                src={leftArrow}
+                onClick={() => history.push('/')}
+                data-testid="button-back-to-home"
+              />
               <span>back</span>
             </Header>
             <Content>
-              <Button type="button" onClick={handlePlayAgain} loading={loading}>
+              <Button
+                type="button"
+                onClick={handlePlayAgain}
+                loading={loading}
+                data-testid="button-play-again"
+              >
                 choose your path again, Padawan
               </Button>
               <motion.img

@@ -19,7 +19,7 @@ const Main: React.FC = () => {
 
   const variants: Variants = {
     visible: (i: number) => ({
-      transform: 'translateY(0)',
+      translateY: 0,
       opacity: 1,
       transition: {
         delay: i * 0.1,

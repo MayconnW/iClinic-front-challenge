@@ -15,7 +15,11 @@ const Button: React.FC<Props> = ({ loading = false, children, ...rest }) => {
       {!loading ? (
         <>{children}</>
       ) : (
-        <SyncLoader size={15} color={theme.color.primary} loading={loading} />
+        <SyncLoader
+          size={15}
+          color={theme?.color?.primary || '#000'}
+          loading={loading}
+        />
       )}
     </Container>
   );
